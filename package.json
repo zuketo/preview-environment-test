@@ -1,0 +1,26 @@
+{
+  "name": "preview-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build",
+    "test": "playwright test",
+    "test:web": "playwright test --project=web-service",
+    "test:static": "playwright test --project=static-site",
+    "test:worker": "playwright test --project=worker",
+    "test:local": "BASE_URL=http://localhost:3000 playwright test",
+    "test:static-local": "BASE_URL=http://localhost:8000 playwright test --project=static-site",
+    "worker": "node worker.js"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.40.0"
+  }
+}

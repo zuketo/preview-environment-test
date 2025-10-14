@@ -1,0 +1,29 @@
+previews:
+  generation: automatic # Enable preview environments
+
+services:
+  # web service
+  - type: web
+    runtime: node
+    name: preview-test-web-service
+    repo: https://github.com/zuketo/preview-test
+    buildCommand: npm install && npm run build
+    startCommand: npm run dev
+
+  # static site service
+  - type: web
+    runtime: static
+    name: preview-test-static-site
+    repo: https://github.com/zuketo/preview-test
+    buildCommand: npm install && npm run export
+    staticPublishPath: ./out
+
+  # background worker
+  - type: worker
+    runtime: node
+    name: preview-test-worker
+    repo: https://github.com/zuketo/preview-test
+    buildCommand: npm install
+    startCommand: npm run worker
+
+
